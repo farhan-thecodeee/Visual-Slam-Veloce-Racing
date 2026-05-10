@@ -30,7 +30,7 @@ MonocularMode::MonocularMode() :Node("mono_node_cpp")
     this->declare_parameter("node_name_arg", "not_given"); // Name of this agent 
     this->declare_parameter("voc_file_arg", "file_not_set"); // Needs to be overriden with appropriate name  
     this->declare_parameter("settings_file_path_arg", "file_path_not_set"); // path to settings file  
-    
+
     //* Watchdog, populate default values
     nodeName = "not_set";
     vocFilePath = "file_not_set";
@@ -59,13 +59,13 @@ MonocularMode::MonocularMode() :Node("mono_node_cpp")
 
     // std::cout<<"vocFilePath: "<<vocFilePath<<std::endl;
     // std::cout<<"settingsFilePath: "<<settingsFilePath<<std::endl;
-    
-    
+
+
     //* DEBUG print
     RCLCPP_INFO(this->get_logger(), "nodeName %s", nodeName.c_str());
     RCLCPP_INFO(this->get_logger(), "voc_file %s", vocFilePath.c_str());
     // RCLCPP_INFO(this->get_logger(), "settings_file_path %s", settingsFilePath.c_str());
-    
+
     subexperimentconfigName = "/mono_py_driver/experiment_settings"; // topic that sends out some configuration parameters to the cpp ndoe
     pubconfigackName = "/mono_py_driver/exp_settings_ack"; // send an acknowledgement to the python node
     subImgMsgName = "/mono_py_driver/img_msg"; // topic to receive RGB image messages
